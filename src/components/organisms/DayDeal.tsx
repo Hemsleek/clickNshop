@@ -39,6 +39,7 @@ const ItemsWrapper = styled.View`
   flex-grow: 1;
   margin-top: ${hp(1.86)}px;
   padding-right: ${wp(3.94)}px;
+  margin-bottom: ${hp(70)}px;
 `;
 const ItemSeperator = styled.View`
   margin-top: ${hp(4.55)}px; ;
@@ -61,6 +62,7 @@ const DayDeal = () => {
       <DealHeader />
       <ItemsWrapper>
         <FlatList
+          showsVerticalScrollIndicator={false}
           data={dayDealsData}
           renderItem={DayDealItem}
           keyExtractor={(_, index) => String(index)}

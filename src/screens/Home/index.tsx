@@ -10,6 +10,8 @@ import { CContainer } from "../../theme/style.component";
 import HomeHeader from "../../components/organisms/HomeHeader";
 import HomeActions from "../../components/organisms/HomeActions";
 import DayDeal from "../../components/organisms/DayDeal";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { RootStackParamsList } from "../../utils/types";
 
 const Container = styled(CContainer)``;
 const HeaderWrapper = styled.View`
@@ -23,11 +25,16 @@ const ActionsWrapper = styled.View`
   margin-bottom: ${hp(2.34)}px;
 `;
 
+// navigation type
+type THomeNavigation = NavigationProp<RootStackParamsList, "shop screens">;
+
 const HomeIndex = () => {
+  const navigation: THomeNavigation = useNavigation();
+
   return (
     <Container>
       <HeaderWrapper>
-        <HomeHeader />
+        <HomeHeader goToCart={() => navigation.navigate("cart screen")} />
       </HeaderWrapper>
       <ActionsWrapper>
         <HomeActions />

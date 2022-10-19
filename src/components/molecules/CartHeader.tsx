@@ -17,10 +17,14 @@ const HeaderText = styled.Text`
   color: ${(props) => props.theme.lightBlack};
 `;
 
-const CartHeader = () => {
+const CartHeader = ({ goBack }: { goBack: Function }) => {
   return (
     <Container>
-      <Pressable onPress={() => {}}>
+      <Pressable
+        onPress={() => {
+          goBack();
+        }}
+      >
         <BackArrow />
       </Pressable>
       <HeaderText>Cart</HeaderText>

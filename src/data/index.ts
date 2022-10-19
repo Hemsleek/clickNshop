@@ -59,3 +59,47 @@ export const dayDealsData = [
     img: require("../../assets/speaker.png"),
   },
 ];
+
+export const recentlyViewedData = [
+  {
+    name: "Samsung Galaxy A5...",
+    img: require("../../assets/recently-image.png"),
+    price: "123,000",
+    currentPrice: "150,000",
+  },
+  {
+    name: "Samsung Galaxy A5...",
+    img: require("../../assets/recently-image.png"),
+    price: "123,000",
+    currentPrice: "150,000",
+  },
+  {
+    name: "Samsung Galaxy A5...",
+    img: require("../../assets/recently-image.png"),
+    price: "123,000",
+    currentPrice: "150,000",
+  },
+  {
+    name: "Samsung Galaxy A5...",
+    img: require("../../assets/recently-image.png"),
+    price: "123,000",
+    currentPrice: "150,000",
+  },
+];
+
+export const cartData = [
+  {
+    name: "12pcs Artificial hanging plant Iuy Vine Garland Green Leaves Plants Leaf De...",
+    img: require("../../assets/cart-image.png"),
+    price: "24,000",
+    currentPrice: "15,000",
+    quantity: 1,
+  },
+  {
+    name: "12pcs Artificial hanging plant Iuy Vine Garland Green Leaves Plants Leaf De...",
+    img: require("../../assets/cart-image.png"),
+    price: "24,000",
+    currentPrice: "15,000",
+    quantity: 3,
+  },
+];

@@ -6,6 +6,7 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
+import DiscountContainer from "../atoms/DiscountContainer";
 
 interface IDayDealItem {
   name: string;
@@ -35,21 +36,6 @@ const ItemName = styled.Text`
 const ItemPrice = styled.Text`
   margin-top: ${hp(0.7)}px;
 `;
-const DiscountContainer = styled.View`
-  background-color: ${(props) => props.theme.shopRed};
-  align-items: center;
-  justify-content: center;
-  width: ${wp(10.27)}px;
-  height: ${hp(2.8)}px;
-  max-width: ${wp(10.27)}px;
-  max-height: ${hp(2.8)}px;
-  align-self: flex-end;
-`;
-const DiscountText = styled.Text`
-  font-weight: 700;
-  font-size: 12px;
-  color: #ffffff;
-`;
 
 const ImageWrapper = styled.View`
   width: ${wp(40)}px;
@@ -63,9 +49,7 @@ const DayDealItem = ({
 }) => {
   return (
     <Container>
-      <DiscountContainer>
-        <DiscountText>-{discount}</DiscountText>
-      </DiscountContainer>
+      <DiscountContainer discount={discount} />
       <ImageWrapper>
         <Image
           source={img}
