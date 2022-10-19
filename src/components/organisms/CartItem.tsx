@@ -11,6 +11,8 @@ import DeleteIcon from "../atoms/icons/DeleteIcon";
 import IncreaseIcon from "../atoms/icons/IncreaseIcon";
 import DecreaseIcon from "../atoms/icons/DecreaseIcon";
 import LikeIcon from "../atoms/icons/LikeIcon";
+import { useDispatch } from "react-redux";
+import { deleteItemFromCart } from "../../store/cartReducer";
 
 const Container = styled.View`
   padding-top: ${hp(2.34)}px;
@@ -96,9 +98,18 @@ interface ICartItem {
   currentPrice: string;
   name: string;
   quantity: number;
+  id: string;
 }
 
-const CartItem = ({ img, price, currentPrice, name, quantity }: ICartItem) => {
+const CartItem = ({
+  img,
+  price,
+  currentPrice,
+  name,
+  quantity,
+  id,
+}: ICartItem) => {
+  const dispatch = useDispatch();
   return (
     <Container>
       <ItemDetails>
@@ -126,7 +137,11 @@ const CartItem = ({ img, price, currentPrice, name, quantity }: ICartItem) => {
             <RemoveText>Remove</RemoveText>
           </RemoveWrapper>
           <QuantityContainer>
-            <Pressable onPress={() => {}}>
+            <Pressable
+              onPress={() => {
+                dispatch(deleteItemFromCart(id));
+              }}
+            >
               <DecreaseIcon />
             </Pressable>
             <Quantity>{quantity}</Quantity>

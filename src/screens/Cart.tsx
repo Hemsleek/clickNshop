@@ -14,6 +14,7 @@ import RecentlyViewed from "../components/organisms/RecentlyViewed";
 import CheckoutActionCard from "../components/organisms/CheckoutActionCard";
 import CartItem from "../components/organisms/CartItem";
 import { cartData } from "../data";
+import { useSelector, useDispatch } from "react-redux";
 
 const Container = styled(CContainer)``;
 const HeaderWrapper = styled.View`
@@ -48,11 +49,23 @@ const CartWrapper = styled.View`
   margin-top: ${hp(1.56)}px;
 `;
 
+const EmptyCart = styled.Text`
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-vertical: ${hp(2)}px;
+`;
+
 // navigation type
 type TCartNavigation = NavigationProp<RootStackParamsList, "cart screen">;
 
 const Cart = () => {
   const navigation: TCartNavigation = useNavigation();
+  const {
+    cartReducer: { cart },
+  }: any = useSelector((state) => state);
+
+  const dispatch = useDispatch();
 
   return (
     <Container>
@@ -65,15 +78,18 @@ const Cart = () => {
           contentContainerStyle={{ paddingBottom: 145 }}
         >
           <CartItemsWrapper>
-            {cartData.map((cartItem: any, index) => (
+            {cart.map((cartItem: any, index: number) => (
               <CartWrapper key={index}>
                 <CartItem {...cartItem} />
               </CartWrapper>
             ))}
           </CartItemsWrapper>
-          <CheckoutWrapper>
-            <CheckoutActionCard />
-          </CheckoutWrapper>
+          {cart.length === 0 && <EmptyCart>No item in Cart</EmptyCart>}
+          {cart.length > 0 && (
+            <CheckoutWrapper>
+              <CheckoutActionCard />
+            </CheckoutWrapper>
+          )}
           <RecentlyViewedWrapper>
             <RecentlyViewed />
           </RecentlyViewedWrapper>

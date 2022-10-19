@@ -6,6 +6,9 @@ import styled, { ThemeProvider } from "styled-components/native";
 import { Provider as PaperProvider } from "react-native-paper";
 import { appThemes } from "../../theme/appTheme";
 
+import { Provider } from "react-redux";
+import store from "../../store";
+
 const Wrapper = styled.KeyboardAvoidingView`
   flex-grow: 1;
 `;
@@ -14,15 +17,17 @@ const ThemeManager = ({ children }: { children: ReactElement }) => {
   return (
     <ThemeProvider theme={appThemes}>
       <NavigationContainer>
-        <PaperProvider>
-          <StatusBar style="dark" />
-          <Wrapper
-            behavior={Platform.OS === "ios" ? "padding" : undefined}
-            enabled
-          >
-            {children}
-          </Wrapper>
-        </PaperProvider>
+        <Provider store={store}>
+          <PaperProvider>
+            <StatusBar style="dark" />
+            <Wrapper
+              behavior={Platform.OS === "ios" ? "padding" : undefined}
+              enabled
+            >
+              {children}
+            </Wrapper>
+          </PaperProvider>
+        </Provider>
       </NavigationContainer>
     </ThemeProvider>
   );

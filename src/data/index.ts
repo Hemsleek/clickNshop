@@ -94,6 +94,7 @@ export const cartData = [
     price: "24,000",
     currentPrice: "15,000",
     quantity: 1,
+    id: "1",
   },
   {
     name: "12pcs Artificial hanging plant Iuy Vine Garland Green Leaves Plants Leaf De...",
@@ -101,6 +102,7 @@ export const cartData = [
     price: "24,000",
     currentPrice: "15,000",
     quantity: 3,
+    id: "2",
   },
 ];
 
