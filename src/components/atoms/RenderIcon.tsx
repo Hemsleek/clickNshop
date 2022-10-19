@@ -14,24 +14,24 @@ interface IRoute {
 }
 
 const RenderIcon = ({ route: { key }, focused }: IRoute) => {
-  const { primaryColor } = useTheme();
+  const { shopBlack } = useTheme();
 
-  let result = <HomeIcon focused={focused ? primaryColor : ""} />;
+  let result = <HomeIcon focused={focused ? shopBlack : ""} />;
 
   switch (key) {
     case "home":
       break;
     case "categories":
-      result = <CategoriesIcon focused={focused ? primaryColor : ""} />;
+      result = <CategoriesIcon focused={focused ? shopBlack : ""} />;
       break;
     case "feed":
-      result = <FeedIcon focused={focused ? primaryColor : ""} />;
+      result = <FeedIcon focused={focused ? shopBlack : ""} />;
       break;
     case "account":
-      result = <AccountIcon focused={focused ? primaryColor : ""} />;
+      result = <AccountIcon focused={focused ? shopBlack : ""} />;
       break;
     case "help":
-      result = <HelpIcon focused={focused ? primaryColor : ""} />;
+      result = <HelpIcon focused={focused ? shopBlack : ""} />;
       break;
     default:
       break;

@@ -8,9 +8,11 @@ interface IRenderLabel {
 const Text = styled.Text<{ focused: boolean }>`
   color: #434343;
   margin-top: 1px;
+  /* margin-top: -10px; */
   text-transform: capitalize;
   text-align: center;
   font-size: 14px;
+  /* background-color: red; */
 
   ${(props) =>
     props.focused &&
