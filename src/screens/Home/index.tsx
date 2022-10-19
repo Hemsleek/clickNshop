@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 
 import styled, { css } from "styled-components/native";
 import {
@@ -30,11 +30,19 @@ type THomeNavigation = NavigationProp<RootStackParamsList, "shop screens">;
 
 const HomeIndex = () => {
   const navigation: THomeNavigation = useNavigation();
+  const [value, setValue] = useState("");
 
   return (
     <Container>
       <HeaderWrapper>
-        <HomeHeader goToCart={() => navigation.navigate("cart screen")} />
+        <HomeHeader
+          value={value}
+          setValue={setValue}
+          onEnter={() => {
+            navigation.navigate("search result");
+          }}
+          goToCart={() => navigation.navigate("cart screen")}
+        />
       </HeaderWrapper>
       <ActionsWrapper>
         <HomeActions />

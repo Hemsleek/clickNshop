@@ -1,5 +1,5 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
 
 import styled, { css } from "styled-components/native";
 import {
@@ -9,11 +9,12 @@ import {
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { CContainer } from "../theme/style.component";
 import { RootStackParamsList } from "../utils/types";
-import CartHeader from "../components/molecules/CartHeader";
 import RecentlyViewed from "../components/organisms/RecentlyViewed";
 import CheckoutActionCard from "../components/organisms/CheckoutActionCard";
 import CartItem from "../components/organisms/CartItem";
 import { cartData } from "../data";
+import SearchResultHeader from "../components/molecules/SearchResultHeader";
+import TopSuggestions from "../components/organisms/TopSuggestions";
 
 const Container = styled(CContainer)``;
 const HeaderWrapper = styled.View`
@@ -32,8 +33,9 @@ const RecentlyViewedWrapper = styled.View`
   padding-left: ${wp(3.33)}px;
 `;
 
-const Main = styled.View`
-  flex-grow: 1;
+const ImageWrapper = styled.View`
+  margin-vertical: ${hp(1.87)}px;
+  margin-horizontal: ${wp(4.44)}px;
 `;
 
 const CheckoutWrapper = styled.View`
@@ -49,38 +51,38 @@ const CartWrapper = styled.View`
 `;
 
 // navigation type
-type TCartNavigation = NavigationProp<RootStackParamsList, "cart screen">;
+type TSearchResultNavigation = NavigationProp<
+  RootStackParamsList,
+  "search result"
+>;
 
-const Cart = () => {
-  const navigation: TCartNavigation = useNavigation();
+const SearchResult = () => {
+  const navigation: TSearchResultNavigation = useNavigation();
+  const [value, setValue] = useState("");
+  const [isSearch, setIsSearch] = useState(false);
 
   return (
     <Container>
       <HeaderWrapper>
-        <CartHeader goBack={() => navigation.goBack()} />
+        <SearchResultHeader
+          goBack={() => navigation.goBack()}
+          value={value}
+          setValue={setValue}
+          searchText={"Phone"}
+          goToCart={() => navigation.navigate("cart screen")}
+          toggleSearch={() => setIsSearch((currentSearch) => !currentSearch)}
+          showSearch={isSearch}
+        />
       </HeaderWrapper>
-      <Main>
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 145 }}
-        >
-          <CartItemsWrapper>
-            {cartData.map((cartItem: any, index) => (
-              <CartWrapper key={index}>
-                <CartItem {...cartItem} />
-              </CartWrapper>
-            ))}
-          </CartItemsWrapper>
-          <CheckoutWrapper>
-            <CheckoutActionCard />
-          </CheckoutWrapper>
-          <RecentlyViewedWrapper>
-            <RecentlyViewed />
-          </RecentlyViewedWrapper>
-        </ScrollView>
-      </Main>
+      <ImageWrapper>
+        <Image
+          source={require("../../assets/Search-header-image.png")}
+          style={{ resizeMode: "cover", width: "100%" }}
+        />
+      </ImageWrapper>
+      <TopSuggestions />
     </Container>
   );
 };
 
-export default Cart;
+export default SearchResult;

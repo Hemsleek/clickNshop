@@ -103,3 +103,24 @@ export const cartData = [
     quantity: 3,
   },
 ];
+
+export const topSuggestions = [
+  {
+    name: "P15 5.0” HD Screen,...",
+    img: require("../../assets/suggestion1.png"),
+    price: "24,000",
+    currentPrice: "26,000",
+  },
+  {
+    name: "P15 5.0” HD Screen,...",
+    img: require("../../assets/suggestion2.png"),
+    price: "24,000",
+    currentPrice: "26,000",
+  },
+  {
+    name: "P15 5.0” HD Screen,...",
+    img: require("../../assets/suggestion3.png"),
+    price: "24,000",
+    currentPrice: "26,000",
+  },
+];

@@ -18,15 +18,28 @@ const Spacer = styled.View`
   flex-grow: 1;
 `;
 
-const HomeHeader = ({ goToCart }: { goToCart: Function }) => {
-  const [value, setValue] = useState("");
+const HomeHeader = ({
+  goToCart,
+  value,
+  setValue,
+  onEnter,
+}: {
+  goToCart: Function;
+  value: string;
+  setValue: Function;
+  onEnter: Function;
+}) => {
   return (
     <Container>
       <Pressable onPress={() => {}}>
         <BackArrow />
       </Pressable>
       <Spacer>
-        <SearchBox value={value} onTextChange={(text) => setValue(text)} />
+        <SearchBox
+          onEnter={() => onEnter()}
+          value={value}
+          onTextChange={(text) => setValue(text)}
+        />
       </Spacer>
       <Pressable
         onPress={() => {

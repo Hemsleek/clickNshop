@@ -25,9 +25,11 @@ const Input = styled(TextInput)`
 const SearchBox = ({
   value = "",
   onTextChange,
+  onEnter,
 }: {
   value: string;
   onTextChange: (text: string) => void;
+  onEnter?: Function;
 }) => {
   return (
     <Container>
@@ -36,6 +38,7 @@ const SearchBox = ({
         placeholder="Search for Products & Brands..."
         value={value}
         onChangeText={onTextChange}
+        onSubmitEditing={() => onEnter?.()}
       />
     </Container>
   );

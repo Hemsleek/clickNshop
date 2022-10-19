@@ -6,6 +6,7 @@ import styled, { css } from "styled-components/native";
 import { CContainer } from "./theme/style.component";
 import Cart from "./screens/Cart";
 import { RootStackParamsList } from "./utils/types";
+import SearchResult from "./screens/SearchResult";
 
 const Container = styled(CContainer)`
   flex-grow: 1;
@@ -25,6 +26,7 @@ const AppNavigations = () => {
         >
           <Screen name="shop screens" component={BottomNav} />
           <Screen name="cart screen" component={Cart} />
+          <Screen name="search result" component={SearchResult} />
         </Navigator>
       </SafeAreaView>
     </Container>
