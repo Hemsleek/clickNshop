@@ -10,7 +10,6 @@ const Wrapper = styled.KeyboardAvoidingView`
   flex-grow: 1;
 `;
 
-
 const ThemeManager = ({ children }: { children: ReactElement }) => {
   return (
     <ThemeProvider theme={appThemes}>
