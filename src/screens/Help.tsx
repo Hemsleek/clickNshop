@@ -3,7 +3,9 @@ import React from "react";
 
 const Help = () => {
   return (
-    <View>
+    <View
+      style={{ alignItems: "center", justifyContent: "center", flexGrow: 1 }}
+    >
       <Text>Help Screen</Text>
     </View>
   );

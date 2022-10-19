@@ -3,7 +3,9 @@ import React from "react";
 
 const Categories = () => {
   return (
-    <View>
+    <View
+      style={{ alignItems: "center", justifyContent: "center", flexGrow: 1 }}
+    >
       <Text>Categories Screen</Text>
     </View>
   );

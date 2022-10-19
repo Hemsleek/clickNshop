@@ -3,7 +3,9 @@ import React from "react";
 
 const Account = () => {
   return (
-    <View>
+    <View
+      style={{ alignItems: "center", justifyContent: "center", flexGrow: 1 }}
+    >
       <Text>Account Screen</Text>
     </View>
   );

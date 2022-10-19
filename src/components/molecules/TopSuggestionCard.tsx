@@ -6,6 +6,7 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
+import DiscountContainer from "../atoms/DiscountContainer";
 
 const Container = styled.View``;
 const ImageWrapper = styled.View`
@@ -36,6 +37,9 @@ const ItemPrice = styled.Text`
 
 const AbsoluteWrapper = styled.View`
   position: absolute;
+  z-index: 10;
+  right: -2px;
+  top: 5px;
 `;
 
 interface IProps {
@@ -43,12 +47,22 @@ interface IProps {
   name: string;
   currentPrice: string;
   price: string;
+  discount: string;
 }
 
-const TopSuggestionCard = ({ img, name, currentPrice, price }: IProps) => {
+const TopSuggestionCard = ({
+  img,
+  name,
+  currentPrice,
+  price,
+  discount,
+}: IProps) => {
   return (
     <Container>
       <ImageWrapper>
+        <AbsoluteWrapper>
+          <DiscountContainer discount={discount} />
+        </AbsoluteWrapper>
         <Image
           source={img}
           style={{ resizeMode: "contain", width: "100%", height: "100%" }}

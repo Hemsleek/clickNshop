@@ -1,5 +1,5 @@
 import { View, Text, Pressable } from "react-native";
-import React from "react";
+import React, { Fragment } from "react";
 
 import styled, { css } from "styled-components/native";
 import {
@@ -21,6 +21,11 @@ const HeaderText = styled.Text`
 `;
 const ActionsWrapper = styled(flexRowJustifyBetween)`
   width: ${wp(16.39)}px;
+`;
+const Spacer = styled.View`
+  flex-grow: 1;
+  margin-left: ${wp(3.05)}px;
+  margin-right: ${wp(2.5)}px;
 `;
 
 const SearchResultHeader = ({
@@ -50,12 +55,23 @@ const SearchResultHeader = ({
         <BackArrow />
       </Pressable>
       {showSearch ? (
-        <SearchBox value={value} onTextChange={(text) => setValue(text)} />
+        <Fragment>
+          <Spacer>
+            <SearchBox value={value} onTextChange={(text) => setValue(text)} />
+          </Spacer>
+          <Pressable
+            onPress={() => {
+              goToCart();
+            }}
+          >
+            <CartIcon />
+          </Pressable>
+        </Fragment>
       ) : (
         <HeaderText>{searchText}</HeaderText>
       )}
-      <ActionsWrapper>
-        {!showSearch && (
+      {!showSearch && (
+        <ActionsWrapper>
           <Pressable
             onPress={() => {
               toggleSearch();
@@ -63,15 +79,16 @@ const SearchResultHeader = ({
           >
             <SearchIcon />
           </Pressable>
-        )}
-        <Pressable
-          onPress={() => {
-            goToCart();
-          }}
-        >
-          <CartIcon />
-        </Pressable>
-      </ActionsWrapper>
+
+          <Pressable
+            onPress={() => {
+              goToCart();
+            }}
+          >
+            <CartIcon />
+          </Pressable>
+        </ActionsWrapper>
+      )}
     </Container>
   );
 };

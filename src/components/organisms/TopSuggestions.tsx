@@ -34,10 +34,6 @@ const SeeAll = styled.Text`
 const Main = styled(flexRowJustifyBetween)`
   margin-top: ${hp(2.96)}px;
 `;
-// const Container = styled.View``;
-// const Container = styled.View``;
-// const Container = styled.View``;
-// const Container = styled.View``;
 
 const TopSuggestions = () => {
   return (

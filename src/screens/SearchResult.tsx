@@ -15,6 +15,7 @@ import CartItem from "../components/organisms/CartItem";
 import { cartData } from "../data";
 import SearchResultHeader from "../components/molecules/SearchResultHeader";
 import TopSuggestions from "../components/organisms/TopSuggestions";
+import SearchResultsData from "../components/organisms/SearchResultsData";
 
 const Container = styled(CContainer)``;
 const HeaderWrapper = styled.View`
@@ -50,6 +51,10 @@ const CartWrapper = styled.View`
   margin-top: ${hp(1.56)}px;
 `;
 
+const SearchWrapper = styled.View`
+  margin-top: ${hp(1.56)}px;
+`;
+
 // navigation type
 type TSearchResultNavigation = NavigationProp<
   RootStackParamsList,
@@ -81,6 +86,9 @@ const SearchResult = () => {
         />
       </ImageWrapper>
       <TopSuggestions />
+      <SearchWrapper>
+        <SearchResultsData />
+      </SearchWrapper>
     </Container>
   );
 };
