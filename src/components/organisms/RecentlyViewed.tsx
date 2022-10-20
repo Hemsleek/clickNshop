@@ -22,7 +22,6 @@ const Main = styled.View`
 const Spacer = styled.View`
   margin-right: ${wp(2.5)}px;
 `;
-// const Container = styled.View``;
 
 const RecentlyViewed = () => {
   return (

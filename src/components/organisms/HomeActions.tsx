@@ -20,7 +20,6 @@ const Container = styled(flexRowJustifyBetween)`
 const ActionWrapper = styled.View`
   align-items: center;
   margin-bottom: ${hp(2.06)}px;
-  /* background-color: red; */
   width: ${wp(21.8)}px;
   min-width: ${wp(21.8)}px;
 `;
