@@ -8,8 +8,8 @@ import {
 } from "react-native-responsive-screen";
 import { flexRow } from "../../theme/style.component";
 import SearchBox from "../molecules/SearchBox";
-import CartIcon from "../atoms/icons/CartIcon";
 import MenuIcon from "../atoms/icons/MenuIcon";
+import CartWithBadge from "../molecules/CartWithBadge";
 
 const Container = styled(flexRow)``;
 const Spacer = styled.View`
@@ -46,7 +46,7 @@ const HomeHeader = ({
           goToCart();
         }}
       >
-        <CartIcon />
+        <CartWithBadge />
       </Pressable>
     </Container>
   );

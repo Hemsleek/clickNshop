@@ -9,11 +9,16 @@ import {
 
 import { flexRow, flexRowJustifyBetween } from "../../theme/style.component";
 import BackArrow from "../atoms/icons/BackArrow";
-import CartIcon from "../atoms/icons/CartIcon";
 import SearchIcon from "../atoms/icons/SearchIcon";
 import SearchBox from "./SearchBox";
+import CartWithBadge from "./CartWithBadge";
 
 const Container = styled(flexRowJustifyBetween)``;
+const HeaderWrapper = styled.View`
+  height: ${hp(5.3)}px;
+  align-items: center;
+  justify-content: center;
+`;
 const HeaderText = styled.Text`
   font-weight: 500;
   font-size: 18px;
@@ -64,11 +69,13 @@ const SearchResultHeader = ({
               goToCart();
             }}
           >
-            <CartIcon />
+            <CartWithBadge />
           </Pressable>
         </Fragment>
       ) : (
-        <HeaderText>{searchText}</HeaderText>
+        <HeaderWrapper>
+          <HeaderText>{searchText}</HeaderText>
+        </HeaderWrapper>
       )}
       {!showSearch && (
         <ActionsWrapper>
@@ -85,7 +92,7 @@ const SearchResultHeader = ({
               goToCart();
             }}
           >
-            <CartIcon />
+            <CartWithBadge />
           </Pressable>
         </ActionsWrapper>
       )}

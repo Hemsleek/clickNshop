@@ -10,7 +10,7 @@ export interface BottomTabProps extends SvgProps {
 export type RootStackParamsList = {
   "shop screens": undefined;
   "cart screen": undefined;
-  "search result": undefined;
+  "search result"?: { query: string };
 };
 
 export type BottomTabsParamList = {

@@ -64,11 +64,12 @@ type TSearchResultNavigation = NavigationProp<
   "search result"
 >;
 
-const SearchResult = () => {
+const SearchResult = ({ route: { params } }: any) => {
   const navigation: TSearchResultNavigation = useNavigation();
   const [value, setValue] = useState("");
   const [isSearch, setIsSearch] = useState(false);
-
+  const { query } = params;
+  console.log({ query });
   return (
     <Container>
       <HeaderWrapper>
@@ -76,7 +77,7 @@ const SearchResult = () => {
           goBack={() => navigation.goBack()}
           value={value}
           setValue={setValue}
-          searchText={"Phone"}
+          searchText={query.slice(0, 10)}
           goToCart={() => navigation.navigate("cart screen")}
           toggleSearch={() => setIsSearch((currentSearch) => !currentSearch)}
           showSearch={isSearch}

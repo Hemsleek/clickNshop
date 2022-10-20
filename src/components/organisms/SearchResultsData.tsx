@@ -9,8 +9,9 @@ import {
 import { flexRow } from "../../theme/style.component";
 import ViewToggleIcon from "../atoms/icons/ViewToggleIcon";
 import ArrowDown from "../atoms/icons/ArrowDown";
-import { dayDealsData } from "../../data";
+import { dayDealsData, searchResultsData } from "../../data";
 import DayDealItem from "../molecules/DayDealItem";
+import SearchItem from "./SearchItem";
 
 const Container = styled.View`
   flex-grow: 1;
@@ -58,16 +59,12 @@ const Main = styled.View`
   margin-top: ${hp(1)}px;
   flex-grow: 1;
   margin-bottom: ${hp(400)}px;
-  padding-right: ${wp(3.94)}px;
+  padding-horizontal: ${wp(3)}px;
 `;
 
 const ItemSeperator = styled.View`
-  margin-top: ${hp(2.55)}px; ;
+  margin-top: ${hp(1.25)}px; ;
 `;
-// const Container = styled.View``;
-// const Container = styled.View``;
-// const Container = styled.View``;
-// const Container = styled.View``;
 
 const OptionsHeader = () => {
   return (
@@ -93,8 +90,8 @@ const SearchResultsData = () => {
       <Main>
         <FlatList
           showsVerticalScrollIndicator={false}
-          data={dayDealsData}
-          renderItem={DayDealItem}
+          data={searchResultsData}
+          renderItem={({ item }) => <SearchItem item={item} />}
           keyExtractor={(_, index) => String(index)}
           numColumns={2}
           ItemSeparatorComponent={() => <ItemSeperator />}

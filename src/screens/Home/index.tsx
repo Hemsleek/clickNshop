@@ -39,7 +39,9 @@ const HomeIndex = () => {
           value={value}
           setValue={setValue}
           onEnter={() => {
-            navigation.navigate("search result");
+            const query = value;
+            setValue("");
+            navigation.navigate("search result", { query });
           }}
           goToCart={() => navigation.navigate("cart screen")}
         />

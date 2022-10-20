@@ -60,6 +60,41 @@ export const dayDealsData = [
   },
 ];
 
+export const searchResultsData = [
+  {
+    name: "UMIDIGI A7 Pro 6.3-Inch (4GB, 64GB ROM) Android 10.0,..",
+    price: "150,000",
+    currentPrice: "124,000",
+    discount: "11%",
+    img: require("../../assets/cart-image-2.png"),
+    id: "1",
+  },
+  {
+    name: "UMIDIGI A7 Pro 6.3-Inch (4GB, 64GB ROM) Android 10.0,..",
+    price: "300,000",
+    currentPrice: "200,000",
+    discount: "20%",
+    img: require("../../assets/cart-image-2.png"),
+    id: "2",
+  },
+  {
+    name: "IPhone 14 (1TB ROM) IOS 16.0,..",
+    price: "900,000",
+    currentPrice: "800,000",
+    discount: "10%",
+    img: require("../../assets/cart-image-2.png"),
+    id: "3",
+  },
+  {
+    name: "Samsung  Pro 6.3-Inch (4GB, 64GB ROM) Android 10.0,..",
+    price: "165,000",
+    currentPrice: "215,000",
+    discount: "9%",
+    img: require("../../assets/cart-image-2.png"),
+    id: "4",
+  },
+];
+
 export const recentlyViewedData = [
   {
     name: "Samsung Galaxy A5...",

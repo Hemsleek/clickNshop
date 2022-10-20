@@ -1,5 +1,5 @@
 import { View, Text, Pressable, Image } from "react-native";
-import React from "react";
+import React, { useRef } from "react";
 
 import styled, { css } from "styled-components/native";
 import {
@@ -12,7 +12,8 @@ import IncreaseIcon from "../atoms/icons/IncreaseIcon";
 import DecreaseIcon from "../atoms/icons/DecreaseIcon";
 import LikeIcon from "../atoms/icons/LikeIcon";
 import { useDispatch } from "react-redux";
-import { deleteItemFromCart } from "../../store/cartReducer";
+import { changeQuantity, deleteItemFromCart } from "../../store/cartReducer";
+import { useAlert } from "../../utils/hooks";
 
 const Container = styled.View`
   padding-top: ${hp(2.34)}px;
@@ -110,6 +111,34 @@ const CartItem = ({
   id,
 }: ICartItem) => {
   const dispatch = useDispatch();
+  // Alert Config
+
+  const showAlert = useAlert();
+
+  const handleAlert = (id: string) => {
+    const config = {
+      title: "Cart Item",
+      message: "Are you sure you want to Delete this item From Cart?",
+      buttons: [
+        {
+          text: "Cancel",
+          style: "cancel",
+          onPress: () => {
+            console.log("cancelled");
+          },
+        },
+        {
+          text: "Delete",
+          onPress: () => {
+            console.log(id);
+            dispatch(deleteItemFromCart(id));
+          },
+        },
+      ],
+    };
+
+    showAlert(config);
+  };
   return (
     <Container>
       <ItemDetails>
@@ -132,20 +161,29 @@ const CartItem = ({
           <LikeIcon />
         </LikeWrapper>
         <OtherActions>
-          <RemoveWrapper onPress={() => {}}>
+          <RemoveWrapper
+            onPress={() => {
+              handleAlert(id);
+            }}
+          >
             <DeleteIcon />
             <RemoveText>Remove</RemoveText>
           </RemoveWrapper>
           <QuantityContainer>
             <Pressable
               onPress={() => {
-                dispatch(deleteItemFromCart(id));
+                if (quantity === 1) return;
+                dispatch(changeQuantity({ id, actionType: "remove" }));
               }}
             >
-              <DecreaseIcon />
+              <DecreaseIcon isDisabled={quantity === 1} />
             </Pressable>
             <Quantity>{quantity}</Quantity>
-            <Pressable onPress={() => {}}>
+            <Pressable
+              onPress={() => {
+                dispatch(changeQuantity({ id, actionType: "add" }));
+              }}
+            >
               <IncreaseIcon />
             </Pressable>
           </QuantityContainer>

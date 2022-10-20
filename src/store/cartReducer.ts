@@ -14,8 +14,10 @@ const cartReducer = createSlice({
       if (itemExist) {
         const newCart: any = state.cart.map((item: any) => {
           if (item.id === action.payload.id) {
-            item.quantity += 1;
-            return item;
+            return {
+              ...item,
+              quantity: item.quantity + 1,
+            };
           }
 
           return item;
@@ -28,9 +30,11 @@ const cartReducer = createSlice({
       const { actionType, id } = action.payload;
       const newCart: any = state.cart.map((item: any) => {
         if (item.id === id) {
-          item.quantity =
-            actionType === "add" ? item.quantity + 1 : item.quantity - 1;
-          return item;
+          return {
+            ...item,
+            quantity:
+              actionType === "add" ? item.quantity + 1 : item.quantity - 1,
+          };
         }
 
         return item;
