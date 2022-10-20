@@ -17,7 +17,9 @@ import SearchResultHeader from "../components/molecules/SearchResultHeader";
 import TopSuggestions from "../components/organisms/TopSuggestions";
 import SearchResultsData from "../components/organisms/SearchResultsData";
 
-const Container = styled(CContainer)``;
+const Container = styled(CContainer)`
+  padding-bottom: ${hp(2.34)}px;
+`;
 const HeaderWrapper = styled.View`
   padding-vertical: ${hp(2.03)}px;
   padding-horizontal: ${wp(3.05)}px;
@@ -53,6 +55,7 @@ const CartWrapper = styled.View`
 
 const SearchWrapper = styled.View`
   margin-top: ${hp(1.56)}px;
+  flex-grow: 1;
 `;
 
 // navigation type

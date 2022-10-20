@@ -12,7 +12,9 @@ import ArrowDown from "../atoms/icons/ArrowDown";
 import { dayDealsData } from "../../data";
 import DayDealItem from "../molecules/DayDealItem";
 
-const Container = styled.View``;
+const Container = styled.View`
+  flex-grow: 1;
+`;
 const Wrapper = styled.View`
   background-color: #033a75;
   height: ${hp(6.7)}px;
@@ -55,18 +57,12 @@ const OptionText = styled.Text`
 const Main = styled.View`
   margin-top: ${hp(1)}px;
   flex-grow: 1;
-  margin-bottom: ${hp(800)}px;
+  margin-bottom: ${hp(400)}px;
   padding-right: ${wp(3.94)}px;
 `;
 
-// const ItemsWrapper = styled.View`
-//   flex-grow: 1;
-//   margin-top: ${hp(1.86)}px;
-//   padding-right: ${wp(3.94)}px;
-//   margin-bottom: ${hp(70)}px;
-// `;
 const ItemSeperator = styled.View`
-  margin-top: ${hp(3.55)}px; ;
+  margin-top: ${hp(2.55)}px; ;
 `;
 // const Container = styled.View``;
 // const Container = styled.View``;
@@ -105,6 +101,7 @@ const SearchResultsData = () => {
           columnWrapperStyle={{
             justifyContent: "space-between",
           }}
+          contentContainerStyle={{ paddingBottom: 300 }}
         />
       </Main>
     </Container>

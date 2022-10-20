@@ -7,9 +7,9 @@ import {
   widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
 import { flexRow } from "../../theme/style.component";
-import BackArrow from "../atoms/icons/BackArrow";
 import SearchBox from "../molecules/SearchBox";
 import CartIcon from "../atoms/icons/CartIcon";
+import MenuIcon from "../atoms/icons/MenuIcon";
 
 const Container = styled(flexRow)``;
 const Spacer = styled.View`
@@ -32,7 +32,7 @@ const HomeHeader = ({
   return (
     <Container>
       <Pressable onPress={() => {}}>
-        <BackArrow />
+        <MenuIcon />
       </Pressable>
       <Spacer>
         <SearchBox

@@ -1,6 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import { Platform, SafeAreaView, StatusBar } from "react-native";
+import { Platform, StatusBar } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import BottomNav from "./components/organisms/BottomTabs";
 import styled, { css } from "styled-components/native";
 import { CContainer } from "./theme/style.component";
@@ -19,7 +20,7 @@ const AppNavigations = () => {
   const { Navigator, Screen } = Stack;
   return (
     <Container>
-      <SafeAreaView style={{ flexGrow: 1 }}>
+      <SafeAreaView style={{ flexGrow: 1 }} edges={["top", "left", "right"]}>
         <Navigator
           screenOptions={{ headerShown: false }}
           initialRouteName="shop screens"
