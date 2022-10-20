@@ -1,9 +1,4 @@
 # ClickNShop
-
-## Download Link
-
-[Apk Download Link](https://www.dropbox.com/s/nf8cwy3f0j57nzu/ClickNShop.apk?dl=0)
-
 ## Screenshots
 
 ![Screenshot1](./assets/app-images/screenshot2.png)

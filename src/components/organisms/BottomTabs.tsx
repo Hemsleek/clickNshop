@@ -42,7 +42,7 @@ const BottomNav = () => {
       shifting={false}
       barStyle={{
         backgroundColor: "white",
-        paddingTop: hp("1%"),
+        // paddingTop: hp("1%"),
       }}
       activeColor={primaryColor}
       renderIcon={({ route, focused }) => (

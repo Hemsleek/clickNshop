@@ -11,7 +11,7 @@ import SearchResult from "./screens/SearchResult";
 
 const Container = styled(CContainer)`
   flex-grow: 1;
-  padding: ${Platform.OS === "android" ? StatusBar.currentHeight : 0};
+  padding: ${Platform.OS === "android" ? StatusBar.currentHeight : 0}px;
 `;
 
 const Stack = createStackNavigator<RootStackParamsList>();
