@@ -1,4 +1,8 @@
 # ClickNShop
+
+## Download Link
+[APK DOWNLOAD LINK](https://www.dropbox.com/s/1q0o9uj2608i9nv/clickNShop.apk?dl=0)
+
 ## Screenshots
 
 ![Screenshot1](./assets/app-images/screenshot2.png)
@@ -9,7 +13,7 @@
 
 ## Getting started
 
-clone or download this repository, navigate to the cloned or downloaded folder in your terminal.Run yarn start or npm start in your root folder, depending on your preference / the package manager available on your PC. There will be some listed instruction to follow, you can scan Barcode with your Real device through the Expo-client App and also use a Simulator or(and) an Emulator, Happy hacking!!!💥
+clone or download this repository, navigate to the cloned or downloaded folder in your terminal.Run yarn/npm install to install all dependencies,Run yarn start or npm start in your root folder, depending on your preference / the package manager available on your PC. There will be some listed instruction to follow, you can scan Barcode with your Real device through the Expo-client App and also use a Simulator or(and) an Emulator, Happy hacking!!!💥
 
 ## Prerequisite
 
