@@ -5,7 +5,7 @@ declare module "styled-components" {
 }
 
 export const appThemes = {
-  primaryColor: "red",
+  primaryColor: "rgba(0,0,0,0.1)",
   shopBlack: "#000",
   lightBlack: "#282828",
   shopRed: "#ED1C24",

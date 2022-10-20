@@ -71,6 +71,7 @@ const DayDeal = () => {
           columnWrapperStyle={{
             justifyContent: "space-between",
           }}
+          contentContainerStyle={{ paddingBottom: 30 }}
         />
       </ItemsWrapper>
     </Container>

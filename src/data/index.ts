@@ -78,7 +78,7 @@ export const searchResultsData = [
     id: "2",
   },
   {
-    name: "IPhone 14 (1TB ROM) IOS 16.0,..",
+    name: "IPhone 14 pro max (1TB ROM) IOS 16.0,..",
     price: "900,000",
     currentPrice: "800,000",
     discount: "10%",

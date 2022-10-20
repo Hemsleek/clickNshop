@@ -98,7 +98,7 @@ const SearchResultsData = () => {
           columnWrapperStyle={{
             justifyContent: "space-between",
           }}
-          contentContainerStyle={{ paddingBottom: 300 }}
+          contentContainerStyle={{ paddingBottom: 340 }}
         />
       </Main>
     </Container>

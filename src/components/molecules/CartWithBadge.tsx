@@ -11,7 +11,7 @@ const Badge = styled.View`
   z-index: 10;
   width: 16px;
   height: 16px;
-  border-radius: 100%;
+  border-radius: 100px;
   background-color: ${(props) => props.theme.buttonRed};
   align-items: center;
   justify-content: center;
